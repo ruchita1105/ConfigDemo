@@ -18,14 +18,14 @@ public class UserController {
     private UserService userService;
 
     // Create a new user
-    @PostMapping
+    @PostMapping("/createUser")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User createdUser = userService.createUser(user);
         return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
     }
 
     // Get all users
-    @GetMapping
+    @GetMapping("/getAllUsers")
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
@@ -50,5 +50,10 @@ public class UserController {
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @getMapping("/findByEmail")
+    public User findByEmailId(String email){
+        return  userService.findByEmail(email)
     }
 }
