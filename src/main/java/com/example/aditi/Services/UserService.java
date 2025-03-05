@@ -31,12 +31,17 @@ public class UserService {
     }
 
     // Update user
-    public User updateUser(Long id, User user) {
-        if (userRepository.existsById(id)) {
-            user.setId(id);
-            return userRepository.save(user);
-        }
-        return null;
+    public User updateUser(Long id, User userDetails) {
+        return
+                userRepository.findById(id).map(user -> {
+                    user.setName(userDetails.getName());
+                    user.setEmail(userDetails.getEmail());
+                    user.setCountry(userDetails.getCountry());
+                    return
+                            userRepository.save(user);
+                }).orElse(null);
+
+
     }
 
     // Delete user

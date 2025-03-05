@@ -13,8 +13,18 @@ public class User {
     private Long id;
     private String name;
     private String email;
+    private String Country;
 
     // Getters and Setters
+
+    public String getCountry() {
+        return Country;
+    }
+
+    public void setCountry(String country) {
+        Country = country;
+    }
+
     public Long getId() {
         return id;
     }
@@ -37,5 +47,12 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public User(Long id, String name, String email, String country) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        Country = country;
     }
 }
