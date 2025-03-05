@@ -39,6 +39,14 @@ public class UserService {
         return null;
     }
 
+    public User updateUserByPassword(Long password, User user){
+        if (userRepository.existsById(password)){
+            user.setPassword(password);
+            return userRepository.save(user);
+        }
+        return null;
+    }
+
     // Delete user
     public void deleteUser(Long id) {
         userRepository.deleteById(id);

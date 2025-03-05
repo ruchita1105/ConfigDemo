@@ -13,6 +13,7 @@ public class User {
     private Long id;
     private String name;
     private String email;
+    private Long password;
 
     // Getters and Setters
     public Long getId() {
@@ -38,4 +39,10 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Long getPassword(){ return password; }
+
+    public void setPassword(Long password) {this.password = password; }
+
+
 }

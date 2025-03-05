@@ -3,6 +3,7 @@ package com.example.aditi.Controller;
 import com.example.aditi.Entity.User;
 import com.example.aditi.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.support.Repositories;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -50,5 +51,11 @@ public class UserController {
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/{password}")
+    public ResponseEntity<User> updateUserByPassword(@PathVariable Long password, @RequestBody User user) {
+        User updatedUser = userService.updateUser(password, user);
+        return updatedUser != null ? ResponseEntity.ok(updatedUser) : ResponseEntity.notFound().build();
     }
 }
