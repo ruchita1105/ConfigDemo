@@ -13,7 +13,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    int a;
+    double a;
     private String email;
 
     // Getters and Setters
