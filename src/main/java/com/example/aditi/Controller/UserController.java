@@ -2,6 +2,7 @@ package com.example.aditi.Controller;
 
 import com.example.aditi.Entity.User;
 import com.example.aditi.Services.UserService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,6 +44,12 @@ public class UserController {
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user) {
         User updatedUser = userService.updateUser(id, user);
         return updatedUser != null ? ResponseEntity.ok(updatedUser) : ResponseEntity.notFound().build();
+    }
+
+    @PutMapping("/{mobile}")
+    public ResponseEntity<User> updateUserByMobile(@PathVariable Long mobile, @RequestBody User user){
+        User updatedUserByMobile = userService.updateUserByMobile(mobile, user);
+        return updatedUserByMobile != null ? ResponseEntity.ok(updatedUserByMobile) : ResponseEntity.notFound().build();
     }
 
     // Delete user
