@@ -13,6 +13,8 @@ public class User {
     private Long id;
     private String name;
     private String email;
+    private String city;
+    private Long mobile;
 
     // Getters and Setters
     public Long getId() {
@@ -38,4 +40,12 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public void setCity(String city) { this.city = city; }
+
+    public String getCity() { return city;}
+
+    public void setMobile(Long mobile){ this.mobile = mobile;}
+
+    public Long getMobile(){return mobile;}
 }

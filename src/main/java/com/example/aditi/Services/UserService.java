@@ -39,6 +39,14 @@ public class UserService {
         return null;
     }
 
+    public User updateUserByMobile(Long mobile, User user){
+        if(userRepository.existsById(mobile)){
+            user.setMobile(mobile);
+            return userRepository.save(user);
+        }
+        return null;
+    }
+
     // Delete user
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
