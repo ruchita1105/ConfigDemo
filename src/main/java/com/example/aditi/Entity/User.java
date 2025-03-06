@@ -35,7 +35,7 @@ public class User {
     public String getEmail() {
         return email;
     }
-
+//this is setemail method
     public void setEmail(String email) {
         this.email = email;
     }
