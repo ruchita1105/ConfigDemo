@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 //hello
 //vishanavi
+//hello vaishnavi
 @Entity
 public class User {
 
