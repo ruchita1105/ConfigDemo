@@ -16,6 +16,7 @@ public class User {
     private String email;
     private String city;
     private Long mobile;
+    private String state;
 
     // Getters and Setters
     public Long getId() {
@@ -49,4 +50,12 @@ public class User {
     public void setMobile(Long mobile){ this.mobile = mobile;}
 
     public Long getMobile(){return mobile;}
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
 }
